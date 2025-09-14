@@ -1,0 +1,112 @@
+@font-face {
+    font-family: "asap";
+    src: url("../font/itcgaramond.ttf");
+}
+
+body {
+    font-family: "asap", sans-serif;
+    margin: 0;
+    padding: 140px;
+    box-sizing: border-box;
+    font-size: 24px;
+    background-color: black;
+    color: white;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.profile-image {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    margin-bottom: 40px;
+}
+
+ul.links {
+    list-style-type: disc;  /* restores the circles */
+    padding-left: 40px;     /* enough space for bullet + vertical line */
+}
+
+ul.links li {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+ul.links li a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+ul.links li a:hover {
+    text-decoration: underline;
+}
+
+.added-text {
+    margin-top: 5px;
+    margin-left: 15px;
+    overflow: hidden;
+    height: 0;
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: height 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+                transform 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+    padding-left: 10px;
+    font-size: 18px;
+    line-height: 1;
+    color: white;
+}
+
+.note {
+    font-size: 12px;
+    color: #666;
+  }
+
+/* vertical line like Reddit reply */
+.added-text::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background-color: #242424; /* softer grey for contrast */
+}
+
+.added-text.active {
+    transform: scaleY(1);
+}
+
+.added-text .inner-link {
+    text-decoration: underline;
+    color: #ccc;
+}
+
+.added-text .inner-link:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.emoji {
+    display: inline-block;
+    height: 1em;
+    width: auto;
+    vertical-align: middle;
+    margin-left: 2px;
+}
+
+@media (max-width: 800px) {
+    body, .container { padding: 5%; }
+    ul.links { font-size: 16px; }
+    .emoji { width: 16px; height: 16px; }
+}
+
+@media (max-width: 400px) {
+    body, .container { padding: 8%; }
+    ul.links { font-size: 14px; }
+    .emoji { width: 14px; height: 14px; }
+}

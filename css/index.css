@@ -1,0 +1,136 @@
+@font-face {
+    font-family: "segoeUI";
+    src: url("../font/fgasap.otf") format("truetype");
+}
+body {
+    margin: 0;
+    font-family: "segoeUI", sans-serif;
+    background-color: black;
+    color: white;
+    height: 100vh;
+    overflow: hidden;
+    letter-spacing: 1px;
+}
+.top-bar {
+    position: absolute;
+    top: 8%;
+    left: 6.2%;
+    display: flex;
+    align-items: flex-end;
+    gap: 70px;
+}
+.top-btn {
+    background: none;
+    border: none;
+    font-family: "segoeUI", sans-serif;
+    letter-spacing: 4px;
+    color: rgb(49, 49, 49);
+    font-size: 94px;
+    cursor: pointer;
+    padding: 0;
+    height: 100px;
+    display: flex;
+    align-items: flex-end;
+}
+.top-btn span {
+    display: inline-block;
+    transition: transform 0.2s ease, color 0.2s ease;
+    transform-origin: bottom;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.37);
+}
+.top-btn.active span {
+    transform: scale(1.2);
+    color: white;
+    -webkit-text-fill-color: white !important;
+}
+.separator {
+    position: absolute;
+    top: calc(10% + 100px);
+    left: 0;
+    width: 100vw;
+    height: 1px;
+}
+.content {
+    position: absolute;
+    top: calc(10% + 120px);
+    left: 5%;
+    width: 90%;
+    padding: 20px;
+}
+.inner-link {
+    color: #ff0;
+    text-decoration: underline;
+}
+.emoji {
+    width: auto;
+    height: 1em;
+    vertical-align: middle;
+}
+.text-container {
+    max-width: 500px;
+    line-height: 1.6;
+    font-size: 18px;
+}
+/* Box layout */
+.boxes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 400px;
+}
+.info-box {
+    background-color: black;
+    padding: 20px;
+    border: 1px solid transparent;
+    position: relative;
+    cursor: pointer;  
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+.info-box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    background: radial-gradient(circle at top left, #fff, #555, #000);
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.info-box.open::before {
+    opacity: 1;
+}
+.box-title {
+    font-size: 28px;
+    letter-spacing: 3px;
+    color: white;
+    margin-bottom: 10px;
+}
+.box-separator {
+    width: 100%;
+    height: 1px;
+    background: radial-gradient(circle at left, #fff, #555, #000);
+    margin-bottom: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.info-box.open .box-separator {
+    opacity: 1;
+}
+.box-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease;
+}
+
+.info-box.open .box-content {
+    grid-template-rows: 1fr;
+}
+
+.box-content > div {
+    overflow: hidden;
+}
