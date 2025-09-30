@@ -1,0 +1,141 @@
+@font-face {
+    font-family: "asap";
+    src: url("../font/itcgaramond.ttf");
+}
+body {
+    font-family: "asap", sans-serif;
+    margin: 0;
+    padding: 140px;
+    box-sizing: border-box;
+    font-size: 24px;
+    background-color: black;
+    color: white;
+}
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+.profile-image {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    margin: 0 auto 40px;
+}
+.boxes-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 15px;
+}
+.box {
+    background-image: url("../assets/bg/boxshine.png");
+    background-size: stretch;
+    background-position: center;
+    border: 2px solid #333;
+    padding: 15px;
+}
+.box-wide {
+    grid-column: span 1;
+}
+.box-narrow {
+    grid-column: span 1;
+}
+.box h2 {
+    margin: 0 0 10px 0;
+    font-size: 22px;
+    color: white;
+}
+.box-content {
+    font-size: 16px;
+    line-height: 1.4;
+    color: white;
+}
+.social-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.link-right {
+    text-align: right;
+    margin-left: 10px;
+}
+.note {
+    font-size: 12px;
+    color: #666;
+    display: block;
+    margin-top: 5px;
+}
+.box-content .inner-link {
+    text-decoration: underline;
+    color: #ccc;
+}
+.box-content .inner-link:hover {
+    text-decoration: none;
+    color: white;
+}
+.emoji {
+    display: inline-block;
+    height: 1em;
+    width: auto;
+    vertical-align: middle;
+    margin-left: 2px;
+}
+
+/* Image positioning classes */
+.box-image {
+    object-fit: contain;
+}
+
+.box-image-left {
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
+
+.box-image-right {
+    float: right;
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+
+/* Image scale classes - these affect wrapping */
+.image-scale-small {
+    max-width: 80px;
+    max-height: 80px;
+}
+
+.image-scale-medium {
+    max-width: 120px;
+    max-height: 120px;
+}
+
+.image-scale-large {
+    max-width: 160px;
+    max-height: 160px;
+}
+
+@media (max-width: 800px) {
+    body {
+        padding: 5%;
+    }
+    .boxes-grid {
+        grid-template-columns: 1fr;
+    }
+    .box {
+        font-size: 16px;
+    }
+    .box h2 {
+        font-size: 20px;
+    }
+}
+@media (max-width: 400px) {
+    body {
+        padding: 8%;
+    }
+    .box {
+        font-size: 14px;
+        padding: 12px;
+    }
+    .box h2 {
+        font-size: 18px;
+    }
+}
