@@ -8,7 +8,9 @@
 </head>
 <body>
 <div class="container">
-    <img src="assets/me.webp" alt="Me" class="profile-image">
+    <div class="top-images">
+        <img src="assets/me2.png" alt="Other" class="profile-image">
+    </div>
    
     <div class="boxes-grid">
         <div class="box box-wide">
@@ -16,13 +18,29 @@
             <div class="box-content">
                 <img src="assets/extra/idiotcatherine.png" class="box-image box-image-right image-scale-medium" 
                 style="width: 100px; transform: scale(1.2); transform-origin: right center;">
-                Hi! My name is Emir, but you can call me Orey, or Emi, or... anything. I am a student from Turkiye. :tr:
+                Hello, I am Emir from Turkiye :tr: and I go by the name "orey" online.
                 <br><br>
                 <img src="assets/extra/idiotcatherine.png" class="box-image box-image-left image-scale-medium" 
                 style="width: 100px; transform: scale(1.0); transform-origin: right center;">
-                I do a lot of things, such as (vibe)coding, composing tunes, editing videos, and moderately modding video games (<a href="https://en.wikipedia.org/wiki/Fall_Guys" target="_blank" class="inner-link">Fall Guys</a> as of now).
+                I am a student, I actively have a passion for music, modding video games (<a href="https://en.wikipedia.org/wiki/Fall_Guys" target="_blank" class="inner-link">Fall Guys</a> as of now). 3D art and drawing in general.
                 <br><br>
-                I am currently learning web development!..
+                And now I am currently learning web development.
+            </div>
+        </div>
+        <div class="box music-box">
+            <h2 class="wobble">Music</h2>
+            <div class="box-content">
+                <div class="music-player">
+                    <div class="track-list">
+                        <div class="track-item" data-src="assets/music/1.mp3">Track 1</div>
+                        <div class="track-item" data-src="assets/music/2.mp3">Track 2</div>
+                        <div class="track-item" data-src="assets/music/3.mp3">Track 3</div>
+                    </div>
+                    <div class="player-controls">
+                        <span class="now-playing">No track playing</span>
+                    </div>
+                </div>
+                <audio id="audio-player"></audio>
             </div>
         </div>
         <div class="box box-narrow">
@@ -30,7 +48,7 @@
             <div class="box-content">
                 <div class="social-line">
                     <span>:discord: Discord:</span>
-                    <span class="link-right">oreytv</span>
+                    <span class="link-right">oreyre</span>
                 </div>
                 <br>
                 <div class="social-line">
@@ -61,5 +79,7 @@
 <script src="js/emoji.js"></script>
 <script src="js/stars.js"></script>
 <script src="js/coolwobble.js"></script>
+<script src="js/rotate.js"></script>
+<script src="js/music.js"></script>
 </body>
 </html>

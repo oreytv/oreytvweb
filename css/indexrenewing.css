@@ -5,47 +5,55 @@
 body {
     font-family: "asap", sans-serif;
     margin: 0;
-    padding: 140px;
+    padding: 60px 20px;
     box-sizing: border-box;
-    font-size: 24px;
+    font-size: 16px;
     background-color: black;
     color: white;
 }
 .container {
-    max-width: 900px;
+    max-width: 500px;
     margin: 0 auto;
 }
+.top-images {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    align-items: flex-start;
+}
+
 .profile-image {
-    width: 100%;
-    max-width: 400px;
+    width: 200px;
+    height: auto;
     display: block;
-    margin: 0 auto 40px;
 }
 .boxes-grid {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 .box {
     background-image: url("../assets/bg/boxshine.png");
     background-size: stretch;
     background-position: center;
     border: 2px solid #333;
-    padding: 15px;
+    padding: 10px;
+    width: fit-content;
+    max-width: 85%;
 }
-.box-wide {
-    grid-column: span 1;
+.box:nth-child(odd) {
+    align-self: flex-start;
 }
-.box-narrow {
-    grid-column: span 1;
+.box:nth-child(even) {
+    align-self: flex-end;
 }
 .box h2 {
-    margin: 0 0 10px 0;
-    font-size: 22px;
+    margin: 0 0 6px 0;
+    font-size: 16px;
     color: white;
 }
 .box-content {
-    font-size: 16px;
+    font-size: 12px;
     line-height: 1.4;
     color: white;
 }
@@ -53,16 +61,16 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    gap: 15px;
 }
 .link-right {
     text-align: right;
-    margin-left: 10px;
 }
 .note {
-    font-size: 12px;
+    font-size: 10px;
     color: #666;
     display: block;
-    margin-top: 5px;
+    margin-top: 4px;
 }
 .box-content .inner-link {
     text-decoration: underline;
@@ -87,55 +95,153 @@ body {
 
 .box-image-left {
     float: left;
-    margin-right: 15px;
-    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-bottom: 6px;
 }
 
 .box-image-right {
     float: right;
-    margin-left: 15px;
-    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-bottom: 6px;
 }
 
-/* Image scale classes - these affect wrapping */
+/* Image scale classes */
 .image-scale-small {
+    max-width: 50px;
+    max-height: 50px;
+}
+
+.image-scale-medium {
+    max-width: 65px;
+    max-height: 65px;
+}
+
+.image-scale-large {
     max-width: 80px;
     max-height: 80px;
 }
 
-.image-scale-medium {
-    max-width: 120px;
-    max-height: 120px;
+/* Text rows outside boxes */
+.text-row {
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 0 10px;
+    width: fit-content;
+    max-width: 70%;
 }
 
-.image-scale-large {
-    max-width: 160px;
-    max-height: 160px;
+.text-row.left {
+    align-self: flex-start;
+}
+
+.text-row.right {
+    align-self: flex-end;
+    text-align: right;
+}
+
+/* Info box variant */
+.box.info-box {
+    background-color: rgba(50, 50, 80, 0.3);
+    border-color: #555;
+}
+
+.box.highlight-box {
+    background-color: rgba(80, 60, 30, 0.3);
+    border-color: #664400;
+}
+
+/* Music box styling */
+.music-box {
+    background-image: url("../assets/bg/ovalshine.png");
+    background-size: fill;
+    background-repeat: no-repeat;
+}
+
+.music-player {
+    position: relative;
+}
+
+.track-list {
+    max-height: 120px;
+    overflow-y: auto;
+    background-image: url("../assets/bg/section.png");
+    background-size: cover;
+    padding: 5px;
+    border: 1px solid #444;
+    border-radius: 3px;
+}
+
+.track-item {
+    height: 9px;
+    line-height: 9px;
+    font-size: 8px;
+    padding: 2px 6px;
+    cursor: pointer;
+    color: #ccc;
+    border-bottom: 1px solid #333;
+    transition: all 0.2s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.track-item:last-child {
+    border-bottom: none;
+}
+
+.track-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.track-item.playing {
+    background-color: rgba(255, 215, 0, 0.2);
+    color: yellow;
+    font-weight: bold;
+}
+
+.player-controls {
+    margin-top: 8px;
+    font-size: 10px;
+    color: #999;
+}
+
+.now-playing {
+    font-style: italic;
+}
+
+/* Custom scrollbar for track list */
+.track-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.track-list::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.track-list::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 3px;
+}
+
+.track-list::-webkit-scrollbar-thumb:hover {
+    background: #777;
 }
 
 @media (max-width: 800px) {
     body {
-        padding: 5%;
-    }
-    .boxes-grid {
-        grid-template-columns: 1fr;
-    }
-    .box {
-        font-size: 16px;
-    }
-    .box h2 {
-        font-size: 20px;
+        padding: 40px 15px;
     }
 }
 @media (max-width: 400px) {
     body {
-        padding: 8%;
+        padding: 30px 12px;
     }
     .box {
-        font-size: 14px;
-        padding: 12px;
+        font-size: 11px;
+        padding: 8px;
     }
     .box h2 {
-        font-size: 18px;
+        font-size: 14px;
     }
 }
