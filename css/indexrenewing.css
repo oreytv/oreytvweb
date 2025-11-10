@@ -2,6 +2,10 @@
     font-family: "asap";
     src: url("../font/itcgaramond.ttf");
 }
+
+/* ========================================
+   BASE STYLES
+   ======================================== */
 body {
     font-family: "asap", sans-serif;
     margin: 0;
@@ -11,10 +15,15 @@ body {
     background-color: black;
     color: white;
 }
+
 .container {
     max-width: 500px;
     margin: 0 auto;
 }
+
+/* ========================================
+   TOP SECTION
+   ======================================== */
 .top-images {
     display: flex;
     gap: 20px;
@@ -27,11 +36,16 @@ body {
     height: auto;
     display: block;
 }
+
+/* ========================================
+   BOXES GRID & BOX STYLES
+   ======================================== */
 .boxes-grid {
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
+
 .box {
     background-image: url("../assets/bg/boxshine.png");
     background-size: stretch;
@@ -41,45 +55,72 @@ body {
     width: fit-content;
     max-width: 85%;
 }
+
 .box:nth-child(odd) {
     align-self: flex-start;
 }
+
 .box:nth-child(even) {
     align-self: flex-end;
 }
+
 .box h2 {
     margin: 0 0 6px 0;
     font-size: 16px;
     color: white;
 }
+
 .box-content {
     font-size: 12px;
     line-height: 1.4;
     color: white;
 }
+
+/* Box variants */
+.box.info-box {
+    background-color: rgba(50, 50, 80, 0.3);
+    border-color: #555;
+}
+
+.box.highlight-box {
+    background-color: rgba(80, 60, 30, 0.3);
+    border-color: #664400;
+}
+
+/* ========================================
+   SOCIAL SECTION
+   ======================================== */
 .social-line {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     gap: 15px;
 }
+
 .link-right {
     text-align: right;
 }
+
 .note {
     font-size: 10px;
     color: #666;
     display: block;
     margin-top: 4px;
 }
+
+/* ========================================
+   LINKS & EMOJIS
+   ======================================== */
 .box-content .inner-link {
     text-decoration: underline;
     color: #ccc;
 }
+
 .box-content .inner-link:hover {
     text-decoration: none;
     color: white;
 }
+
 .emoji {
     display: inline-block;
     height: 1em;
@@ -88,7 +129,9 @@ body {
     margin-left: 2px;
 }
 
-/* Image positioning classes */
+/* ========================================
+   IMAGE POSITIONING & SCALING
+   ======================================== */
 .box-image {
     object-fit: contain;
 }
@@ -105,7 +148,6 @@ body {
     margin-bottom: 6px;
 }
 
-/* Image scale classes */
 .image-scale-small {
     max-width: 50px;
     max-height: 50px;
@@ -121,7 +163,9 @@ body {
     max-height: 80px;
 }
 
-/* Text rows outside boxes */
+/* ========================================
+   TEXT ROWS
+   ======================================== */
 .text-row {
     font-size: 14px;
     line-height: 1.5;
@@ -139,34 +183,20 @@ body {
     text-align: right;
 }
 
-/* Info box variant */
-.box.info-box {
-    background-color: rgba(50, 50, 80, 0.3);
-    border-color: #555;
-}
-
-.box.highlight-box {
-    background-color: rgba(80, 60, 30, 0.3);
-    border-color: #664400;
-}
-
+/* ========================================
+   MUSIC BOX
+   ======================================== */
 .music-box {
     background-image: url("../assets/bg/ovalshine.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     min-width: 280px;
-    width: 280px; /* Force a fixed width */
-}
-
-.player-controls {
-    margin-top: 8px;
-    font-size: 10px;
-    color: #999;
-    min-height: 14px; /* Prevents height jumping too */
+    width: 280px;
 }
 
 .music-player {
     position: relative;
+    width: 100%;
 }
 
 .track-list {
@@ -177,6 +207,8 @@ body {
     padding: 5px;
     border: 1px solid #444;
     border-radius: 3px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .track-item {
@@ -212,6 +244,9 @@ body {
     margin-top: 8px;
     font-size: 10px;
     color: #999;
+    min-height: 14px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .now-playing {
@@ -236,20 +271,99 @@ body {
     background: #777;
 }
 
-@media (max-width: 800px) {
-    body {
-        padding: 40px 15px;
-    }
+/* Music box wrapper */
+.music-wrapper {
+    display: flex;
+    gap: 15px;
+    align-items: center;
 }
-@media (max-width: 400px) {
+
+/* ========================================
+   MOBILE RESPONSIVE
+   ======================================== */
+@media (max-width: 600px) {
     body {
-        padding: 30px 12px;
+        padding: 30px 15px;
+        font-size: 14px;
     }
+    
+    .container {
+        max-width: 100%;
+    }
+    
+    /* Profile image smaller on mobile */
+    .profile-image {
+        width: 120px;
+    }
+    
+    /* Boxes take more width on mobile */
     .box {
-        font-size: 11px;
+        max-width: 95%;
         padding: 8px;
+        font-size: 11px;
     }
+    
     .box h2 {
         font-size: 14px;
+    }
+    
+    /* Music box mobile layout */
+    .music-wrapper {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    .music-box {
+        width: 100%;
+        min-width: unset;
+        max-width: 95%;
+    }
+    
+    .music-wrapper .text-row {
+        max-width: 95%;
+        font-size: 11px;
+        padding: 0 5px;
+    }
+    
+    /* Text rows */
+    .text-row {
+        font-size: 12px;
+        max-width: 85%;
+    }
+    
+    /* Social lines wrap better */
+    .social-line {
+        gap: 10px;
+        font-size: 11px;
+    }
+    
+    /* Images scale down */
+    .box-image-left,
+    .box-image-right {
+        max-width: 60px;
+    }
+}
+
+@media (max-width: 400px) {
+    body {
+        padding: 20px 10px;
+    }
+    
+    .profile-image {
+        width: 100px;
+    }
+    
+    .box {
+        padding: 6px;
+        font-size: 10px;
+    }
+    
+    .box h2 {
+        font-size: 13px;
+    }
+    
+    .boxes-grid {
+        gap: 20px;
     }
 }
