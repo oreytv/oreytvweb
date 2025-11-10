@@ -154,7 +154,8 @@ body {
     background-image: url("../assets/bg/ovalshine.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    min-width: 280px; /* This keeps it from changing width */
+    min-width: 280px;
+    width: 280px; /* Force a fixed width */
 }
 
 .player-controls {
