@@ -150,11 +150,18 @@ body {
     border-color: #664400;
 }
 
-/* Music box styling */
 .music-box {
     background-image: url("../assets/bg/ovalshine.png");
-    background-size: fill;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
+    min-width: 280px; /* This keeps it from changing width */
+}
+
+.player-controls {
+    margin-top: 8px;
+    font-size: 10px;
+    color: #999;
+    min-height: 14px; /* Prevents height jumping too */
 }
 
 .music-player {
