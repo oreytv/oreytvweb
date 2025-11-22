@@ -27,31 +27,127 @@
                 And now I am currently learning web development.
             </div>
         </div>
+
         <div style="display: flex; gap: 15px; align-items: center;">
             <div class="text-row left" style="max-width: 180px; font-size: 9px; line-height: 1.4;">
-                Here are some snippets from the little tunes I write, not so special, but you may like some of them.
+                Some of my artwork and drawings I've made over time.
+                <br><br><br>
+                I am still extremely new to making serious art, expect for new additions.
             </div>
             
-            <div class="box music-box">
-                <h2 class="wobble">Music</h2>
+            <div class="box" style="background-image: url('assets/bg/lacebo.png'); background-size: 100% 100%; background-repeat: no-repeat; border: none; min-width: 280px; width: 280px; padding: 14px px;">
+                <h2 class="wobble">Art Gallery</h2>
                 <div class="box-content">
-                    <div class="music-player">
-                        <div class="track-list">
-                            <div class="track-item" data-src="assets/music/1.mp3">Track 1 "Feather"</div>
-                            <div class="track-item" data-src="assets/music/2.mp3">Track 2 "Beaut"</div>
-                            <div class="track-item" data-src="assets/music/3.mp3">Track 3 "I don't get it"</div>
-                            <div class="track-item" data-src="assets/music/4.mp3">Track 4 "Hit hit"</div>
-                            <div class="track-item" data-src="assets/music/5.mp3">Track 5 "Epic"</div>
-                            <div class="track-item" data-src="assets/music/6.mp3">Track 6 "Vocaloid test"</div>
+                    <div class="art-carousel">
+                        <button class="carousel-btn prev-btn" onclick="changeArtSlide(-1)">❮</button>
+                        <div class="carousel-container">
+                            <img src="assets/images/art1.png" class="carousel-image active" alt="cool classroom" data-info="A classroom scene I drew for perspective practice.">
+                            <img src="assets/images/art2.png" class="carousel-image" alt="Art 2" data-info="Here's one of Futaba Sakura">
+                            <img src="assets/images/art3.png" class="carousel-image" alt="Art 3" data-info="Here's a custom design for a Fall Guys character.">
+                            <img src="assets/images/art4.png" class="carousel-image" alt="Art 4" data-info="Pigions😢">
+                            <img src="assets/images/art5.png" class="carousel-image" alt="Art 5" data-info="I had attempted to make an UI concept.">
                         </div>
-                        <div class="player-controls">
-                            <span class="now-playing">No track playing</span>
-                        </div>
+                        <button class="carousel-btn next-btn" onclick="changeArtSlide(1)">❯</button>
                     </div>
-                    <audio id="audio-player"></audio>
                 </div>
             </div>
         </div>
+
+        <div style="display: flex; gap: 15px; align-items: center;">
+            <div class="box showcase-box">
+                <h2 class="wobble">3D Works</h2>
+                <div class="box-content">
+                    <div class="thumbnail-grid">
+                        <div class="thumbnail-item" onclick="openModal('assets/images/3d1.png')">
+                            <img src="assets/images/3d1.png" alt="3D Work 1" data-info="3D render of a Fall Guy swinging on a rope in night time, wanted by the cops.">
+                        </div>
+                        <div class="thumbnail-item" onclick="openModal('assets/images/3d2.png')">
+                            <img src="assets/images/3d2.png" alt="3D Work 2" data-info="I used to work on a game, here is what's left of it.">
+                        </div>
+                        <div class="thumbnail-item" onclick="openModal('assets/images/3d3.png')">
+                            <img src="assets/images/3d3.png" alt="3D Work 3" data-info="Golf cart 3D model">
+                        </div>
+                        <div class="thumbnail-item" onclick="openModal('assets/images/3d4.png')">
+                            <img src="assets/images/3d4.png" alt="3D Work 4" data-info="3D assets for a battle minigame I wanted to make.">
+                        </div>
+                        <div class="thumbnail-item" onclick="openModal('assets/images/3d5.png')">
+                            <img src="assets/images/3d5.png" alt="3D Work 5" data-info="Trying out 'realism'">
+                        </div>
+                        <div class="thumbnail-item" onclick="openModal('assets/images/3d6.png')">
+                            <img src="assets/images/3d6.png" alt="3D Work 6" data-info="Attempt at a cartoony realistic beach-side city area">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-row right" style="max-width: 180px; font-size: 9px; line-height: 1.4;">
+                3D models and renders I've created for various projects.<br><br><br>
+                What I do is mostly about Fall Guys characters. Not my trademark, it is Epic Games'.
+            </div>
+        </div>
+
+        <div style="display: flex; gap: 15px; align-items: center;">
+            <div class="text-row left" style="max-width: 180px; font-size: 9px; line-height: 1.4;">
+                YouTube thumbnails I've designed for various videos.<br><br><br>
+                These are made for my channel and other creators.
+            </div>
+            
+            <div class="box showcase-box">
+                <h2 class="wobble">YouTube Thumbnails</h2>
+                <div class="box-content">
+                    <div class="thumbnail-grid">
+                        <div class="thumbnail-item" onclick="openModal('assets/images/thumbnail1.png')">
+                            <img src="assets/images/thumbnail1.png" alt="Thumbnail 1">
+                        </div>
+                        <div class="thumbnail-item" onclick="openModal('assets/images/thumbnail2.png')">
+                            <img src="assets/images/thumbnail2.png" alt="Thumbnail 2">
+                        </div>
+                        <div class="thumbnail-item" onclick="openModal('assets/images/thumbnail3.png')">
+                            <img src="assets/images/thumbnail3.png" alt="Thumbnail 3">
+                        </div>
+                        <div class="thumbnail-item" onclick="openModal('assets/images/thumbnail4.png')">
+                            <img src="assets/images/thumbnail4.png" alt="Thumbnail 4">
+                        </div>
+                        <div class="thumbnail-item" onclick="openModal('assets/images/thumbnail5.png')">
+                            <img src="assets/images/thumbnail5.png" alt="Thumbnail 5">
+                        </div>
+                        <div class="thumbnail-item" onclick="openModal('assets/images/thumbnail6.png')">
+                            <img src="assets/images/thumbnail6.png" alt="Thumbnail 6">
+                        </div>
+                        <div class="thumbnail-item" onclick="openModal('assets/images/thumbnail7.png')">
+                            <img src="assets/images/thumbnail7.png" alt="Thumbnail 7">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="display: flex; gap: 15px; align-items: center;">
+            <img src="assets/extra/idiotcatherine.png" style="width: 80px; height: auto;">
+            
+            <div class="box showcase-box">
+                <h2 class="wobble">Fall Guys Mods</h2>
+                <div class="box-content">
+                    <div class="mod-grid">
+                        <div class="mod-item">
+                            <div class="mod-title">Chaos Mod</div>
+                            <div class="mod-content">
+                                <img src="assets/images/mod1.png" alt="Mod 1">
+                                <div class="mod-info">Description or info about this mod goes here.</div>
+                            </div>
+                        </div>
+                        <div class="mod-item">
+                            <div class="mod-title">Chaos Mod</div>
+                            <div class="mod-content">
+                                <img src="assets/images/mod1.png" alt="Mod 1">
+                                <div class="mod-info">Description or info about this mod goes here.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="box box-narrow">
             <h2 class="wobble">Socials</h2>
             <div class="box-content">
@@ -77,18 +173,50 @@
                 </div>
             </div>
         </div>
-        <div class="box">
-            <h2 style="color: yellow;" class="wobble">My work</h2>
-            <div class="box-content">
-                This is some other content for Link 3. It can contain HTML.
+
+        <div style="display: flex; gap: 15px; align-items: center;">
+            <div class="text-row left" style="max-width: 180px; font-size: 9px; line-height: 1.4;">
+                Here are some snippets from the little tunes I write, not so special, but you may like some of them.
+            </div>
+            
+            <div class="box music-box">
+                <h2 class="wobble">Music</h2>
+                <div class="box-content">
+                    <div class="music-player">
+                        <div class="track-list">
+                            <div class="track-item" data-src="assets/music/1.mp3">Track 1 "Feather"</div>
+                            <div class="track-item" data-src="assets/music/2.mp3">Track 2 "Beaut"</div>
+                            <div class="track-item" data-src="assets/music/3.mp3">Track 3 "I don't get it"</div>
+                            <div class="track-item" data-src="assets/music/4.mp3">Track 4 "Hit hit"</div>
+                            <div class="track-item" data-src="assets/music/5.mp3">Track 5 "Epic"</div>
+                            <div class="track-item" data-src="assets/music/6.mp3">Track 6 "Vocaloid test"</div>
+                            <div class="track-item" data-src="assets/music/7.mp3">Track 7 "Dreamy"</div>
+                            <div class="track-item" data-src="assets/music/8.mp3">Track 8 "Chill vibes"</div>
+                        </div>
+                        <div class="player-controls">
+                            <span class="now-playing">No track playing</span>
+                        </div>
+                    </div>
+                    <audio id="audio-player"></audio>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Modal for viewing images -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modalImage">
+</div>
+
 <script src="js/emoji.js"></script>
 <script src="js/stars.js"></script>
 <script src="js/coolwobble.js"></script>
 <script src="js/rotate.js"></script>
 <script src="js/music.js"></script>
+<script src="js/carousel.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/tooltip.js"></script>
 </body>
 </html>

@@ -207,7 +207,6 @@ body {
     background-size: cover;
     padding: 5px;
     border: 1px solid #444;
-    border-radius: 3px;
     width: 100%;
     box-sizing: border-box;
 }
@@ -254,6 +253,227 @@ body {
     font-style: italic;
 }
 
+/* ========================================
+   ART CAROUSEL BOX
+   ======================================== */
+.art-box {
+    background-image: url("../assets/bg/ovalshine.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    min-width: 280px;
+    width: 280px;
+}
+
+.art-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.carousel-container {
+    position: relative;
+    width: 400px;
+    height: 150px;
+    overflow: hidden;
+    background-image: url('../assets/bg/section.png');
+    background-size: 200% 5%;
+    background-position: center;
+}
+
+.carousel-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+}
+
+.carousel-image.active {
+    opacity: 1;
+}
+
+.carousel-btn {
+    background-image: url('../assets/bg/bgshine.png');
+    background-size: cover; /* or 100% 100% */
+    background-position: center;
+    font-size: 30px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: white;
+    /* Add size controls: */
+    width: 40px;  /* adjust to desired button size */
+    height: 30px; /* adjust to desired button size */
+    padding: 0;   /* removes any default padding */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-btn:hover {
+    opacity: 0.8;
+}
+
+/* ========================================
+   MODS
+   ======================================== */
+   .mod-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-top: 5px;
+}
+
+.mod-item {
+    background-image: url('../assets/bg/section.png');
+    background-size: contain;
+    background-position: center;
+    border: 1px solid #444;
+    padding: 3px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.mod-content img {
+    width: 100px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.mod-info {
+    flex: 1;
+    font-size: 10px;
+    line-height: 1.3;
+}
+
+.mod-title {
+    font-size: 10px;
+    margin-bottom: 3px;
+    color: white;
+}
+
+.mod-content {
+    display: flex;
+    gap: 3px;
+    align-items: flex-start;
+}
+
+/* ========================================
+   SHOWCASE BOXES (3D WORKS, MODS)
+   ======================================== */
+.showcase-box {
+    background-image: url("../assets/bg/ovalshine.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    min-width: 280px;
+    width: 280px;
+}
+
+.thumbnail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.thumbnail-item {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: opacity 0.2s;
+    background-image: url('../assets/bg/section.png');
+    background-size:contain;
+    background-position: center;
+    border: 1px solid #444;
+}
+
+.thumbnail-item:hover {
+    opacity: 0.8;
+}
+
+.thumbnail-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* fills entire space, crops what doesn't fit */
+    display: block;
+}
+/* ========================================
+   HOVER TOOLTIP
+   ======================================== */
+.hover-tooltip {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 2px 4px;
+    font-size: 11px;
+    max-width: 250px;
+    white-space: normal;
+    text-align: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+    z-index: 1001; /* Higher z-index than arrow */
+    line-height: 1.3;
+}
+
+.hover-tooltip.show {
+    opacity: 1;
+}
+
+.hover-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 2px solid transparent;
+    border-top-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000; /* Lower than tooltip text */
+}
+
+.thumbnail-item,
+.carousel-container {
+    position: relative;
+}
+/* ========================================
+   MODAL
+   ======================================== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border: 2px solid #333;
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: #ccc;
+}
+
 /* Custom scrollbar for track list */
 .track-list::-webkit-scrollbar {
     width: 6px;
@@ -265,18 +485,10 @@ body {
 
 .track-list::-webkit-scrollbar-thumb {
     background: #555;
-    border-radius: 3px;
 }
 
 .track-list::-webkit-scrollbar-thumb:hover {
     background: #777;
-}
-
-/* Music box wrapper */
-.music-wrapper {
-    display: flex;
-    gap: 15px;
-    align-items: center;
 }
 
 /* ========================================
@@ -292,12 +504,10 @@ body {
         max-width: 100%;
     }
     
-    /* Profile image smaller on mobile */
     .profile-image {
         width: 120px;
     }
     
-    /* Boxes take more width on mobile */
     .box {
         max-width: 95%;
         padding: 8px;
@@ -308,38 +518,22 @@ body {
         font-size: 14px;
     }
     
-    /* Music box mobile layout */
-    .music-wrapper {
-        flex-direction: column;
-        gap: 10px;
-        align-items: flex-start;
-    }
-    
-    .music-box {
+    .music-box, .art-box, .showcase-box {
         width: 100%;
         min-width: unset;
         max-width: 95%;
     }
     
-    .music-wrapper .text-row {
-        max-width: 95%;
-        font-size: 11px;
-        padding: 0 5px;
-    }
-    
-    /* Text rows */
     .text-row {
         font-size: 12px;
         max-width: 85%;
     }
     
-    /* Social lines wrap better */
     .social-line {
         gap: 10px;
         font-size: 11px;
     }
     
-    /* Images scale down */
     .box-image-left,
     .box-image-right {
         max-width: 60px;
