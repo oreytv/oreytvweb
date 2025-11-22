@@ -33,6 +33,7 @@ body {
 
 .profile-image {
     width: 200px;
+    max-width: 200px;
     height: auto;
     display: block;
 }
@@ -135,6 +136,8 @@ body {
    ======================================== */
 .box-image {
     object-fit: contain;
+    max-width: 100%;
+    height: auto;
 }
 
 .box-image-left {
@@ -274,7 +277,8 @@ body {
 
 .carousel-container {
     position: relative;
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     height: 150px;
     overflow: hidden;
     background-image: url('../assets/bg/section.png');
@@ -288,6 +292,7 @@ body {
     height: 100%;
     object-fit: contain;
     opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .carousel-image.active {
@@ -296,20 +301,20 @@ body {
 
 .carousel-btn {
     background-image: url('../assets/bg/bgshine.png');
-    background-size: cover; /* or 100% 100% */
+    background-size: cover;
     background-position: center;
     font-size: 30px;
     cursor: pointer;
     border: none;
     background-color: transparent;
     color: white;
-    /* Add size controls: */
-    width: 40px;  /* adjust to desired button size */
-    height: 30px; /* adjust to desired button size */
-    padding: 0;   /* removes any default padding */
+    width: 40px;
+    height: 30px;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 .carousel-btn:hover {
@@ -319,7 +324,7 @@ body {
 /* ========================================
    MODS
    ======================================== */
-   .mod-grid {
+.mod-grid {
     display: flex;
     flex-direction: column;
     gap: 3px;
@@ -336,10 +341,18 @@ body {
     box-sizing: border-box;
 }
 
+.mod-content {
+    display: flex;
+    gap: 3px;
+    align-items: flex-start;
+}
+
 .mod-content img {
-    width: 100px;
+    width: 100%;
+    max-width: 100px;
     height: auto;
     flex-shrink: 0;
+    object-fit: contain;
 }
 
 .mod-info {
@@ -354,14 +367,8 @@ body {
     color: white;
 }
 
-.mod-content {
-    display: flex;
-    gap: 3px;
-    align-items: flex-start;
-}
-
 /* ========================================
-   SHOWCASE BOXES (3D WORKS, MODS)
+   SHOWCASE BOXES (3D WORKS, THUMBNAILS)
    ======================================== */
 .showcase-box {
     background-image: url("../assets/bg/ovalshine.png");
@@ -384,9 +391,11 @@ body {
     overflow: hidden;
     transition: opacity 0.2s;
     background-image: url('../assets/bg/section.png');
-    background-size:contain;
+    background-size: contain;
     background-position: center;
     border: 1px solid #444;
+    aspect-ratio: 16/9;
+    height: auto;
 }
 
 .thumbnail-item:hover {
@@ -396,9 +405,10 @@ body {
 .thumbnail-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* fills entire space, crops what doesn't fit */
+    object-fit: cover;
     display: block;
 }
+
 /* ========================================
    HOVER TOOLTIP
    ======================================== */
@@ -414,7 +424,7 @@ body {
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.2s;
-    z-index: 1001; /* Higher z-index than arrow */
+    z-index: 1001;
     line-height: 1.3;
 }
 
@@ -430,13 +440,14 @@ body {
     transform: translateX(-50%);
     border: 2px solid transparent;
     border-top-color: rgba(0, 0, 0, 0.9);
-    z-index: 1000; /* Lower than tooltip text */
+    z-index: 1000;
 }
 
 .thumbnail-item,
 .carousel-container {
     position: relative;
 }
+
 /* ========================================
    MODAL
    ======================================== */
@@ -506,6 +517,7 @@ body {
     
     .profile-image {
         width: 120px;
+        max-width: 120px;
     }
     
     .box {
@@ -522,6 +534,10 @@ body {
         width: 100%;
         min-width: unset;
         max-width: 95%;
+    }
+    
+    .carousel-container {
+        max-width: 100%;
     }
     
     .text-row {
@@ -547,6 +563,7 @@ body {
     
     .profile-image {
         width: 100px;
+        max-width: 100px;
     }
     
     .box {
@@ -560,5 +577,11 @@ body {
     
     .boxes-grid {
         gap: 20px;
+    }
+    
+    .carousel-btn {
+        width: 30px;
+        height: 25px;
+        font-size: 24px;
     }
 }
